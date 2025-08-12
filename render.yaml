@@ -1,0 +1,16 @@
+services:
+  - type: web
+    env: node
+    plan: free   # или paid
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    envVars:
+      - key: SUPABASE_URL
+        fromSecret: SUPABASE_URL
+      - key: SUPABASE_KEY
+        fromSecret: SUPABASE_KEY
+      - key: ADMIN_KEY
+        fromSecret: ADMIN_KEY
+      - key: ADMIN_IP
+        fromSecret: ADMIN_IP
